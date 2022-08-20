@@ -17,8 +17,16 @@ int main(void)
     cin >> mes;
     cout << "Digite o ano: ";
     cin >> ano;
-    cout << endl << "Digite a quantidade de dias a serem avancados: ";
-    cin >> avancar;
+    
+    do
+    {
+        cout << endl << "Digite a quantidade de dias a serem avancados: ";
+        cin >> avancar;
+        
+        if (avancar <= 0)
+            cout << "Desculpe. Quantidade de dias invalida. Tente novamente!" << endl << endl;
+    }
+    while (avancar <= 0);
 
     data.setAno(ano);
     mes = data.getMes(mes);
